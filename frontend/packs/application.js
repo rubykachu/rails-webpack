@@ -14,7 +14,14 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import "./application.css";
-import "init";
+import "bootstrap/dist/js/bootstrap";
+import Rails from "rails-ujs";
+import Routes from "./jsroute.js.erb";
+
 import "components/home/home";
 
+Rails.start();
+
+/* eslint no-unused-vars: "error" */
+window.Routes = Routes;
 console.log("I am here");
