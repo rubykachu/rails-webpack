@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const erb = require("./loaders/erb");
 
 environment.loaders.prepend("erb", erb);
-module.exports = environment;
+
 environment.plugins.prepend(
   "Provide",
   new webpack.ProvidePlugin({
@@ -13,3 +13,5 @@ environment.plugins.prepend(
     Popper: ["popper.js", "default"]
   })
 );
+
+module.exports = environment;

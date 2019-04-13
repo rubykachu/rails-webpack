@@ -10,7 +10,7 @@
 import "./application.css";
 import "bootstrap/dist/js/bootstrap";
 import Rails from "rails-ujs";
-import Routes from "./jsroute.js.erb";
+// import Routes from "./route.js.erb";
 
 import "components/home/home";
 

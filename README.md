@@ -20,3 +20,6 @@ Nếu dùng biến toàn cục thì bổ sung vào file `eslintrc` biến toàn 
     "Routes": true
   },
 ```
+
+## Bug
+- Bị nhấp nháy khi render ra view. Lý do trong quá trinh build thì không build ra file css, mà css được load bởi javascript. Khắc phục: Trong file `webpacker.yml` sửa dòng `extract_css: true` thành `extract_css: false`
