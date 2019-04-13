@@ -5,8 +5,8 @@ html
     title QuizApp
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all'
-
+    / = stylesheet_pack_tag 'application', media: 'all'
   body
     = yield
-  = javascript_pack_tag 'application'
+    = javascript_pack_tag 'application'
+
