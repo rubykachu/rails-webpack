@@ -27,7 +27,7 @@ module #{const_name}::Operation
   class Create < Trailblazer::Operation
     # step Model(#{const_name}, :new)
     # step Contract::Build(constant: #{const_name}::Contract::Create)
-    # step Contract::Validate(key: :#{component_name.parameterize.underscore})
+    # step Contract::Validate()
     # step Contract::Persist()
   end
 end
