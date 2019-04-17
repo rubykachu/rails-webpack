@@ -59,9 +59,8 @@ gem 'js-routes'
 gem 'slim'
 gem 'pry'
 # Install traiblazer
-gem 'trailblazer'
-gem 'trailblazer-rails'
-# optional, in case you want Cells.
-gem 'trailblazer-cells'
-gem 'cells-slim'         # Or cells-haml, cells-slim, cells-hamlit.
-gem 'cells-rails'
+gem 'trailblazer', '2.0.7'
+gem 'trailblazer-rails', '1.0.8' # if you are in rails.
+gem 'trailblazer-cells', '0.0.3'
+gem 'cells-slim', '0.0.5'
+gem 'cells-rails', '0.0.8'
