@@ -1,7 +1,7 @@
 module ApplicationHelper
   def component(component_name, locals = {}, &block)
     if locals.key?(:collection)
-      partial = component_name.singularize
+      partial = component_name.split('/').last.singularize
       partial = locals[:partial] if locals[:partial].present?
       path = "components/#{component_name}/#{partial}"
       render partial: path, collection: locals[:collection], as: locals[:as], locals: locals[:locals]

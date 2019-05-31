@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def index
+    run Posts::Operation::Index
+  end
+
   def new
     run Posts::Operation::New
   end

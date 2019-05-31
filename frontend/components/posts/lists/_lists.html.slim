@@ -1,0 +1,13 @@
+.container.post-page
+  h2.title-page Posts
+  p
+    i = "Author: #{author.fullname}"
+  table.table.table-striped
+    thead
+      tr
+        th scope="col"  #
+        th scope="col"  Subject
+        th scope="col"  Handle
+    tbody
+      = c 'posts/lists', collection: posts, as: :post, locals: { author: author }
+  = link_to 'Back', authors_path, class: 'btn btn-secondary'
