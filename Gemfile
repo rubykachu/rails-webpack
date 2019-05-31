@@ -64,3 +64,5 @@ gem 'trailblazer-rails', '1.0.8'
 gem 'trailblazer-cells', '0.0.3'
 gem 'cells-slim', '0.0.5'
 gem 'cells-rails', '0.0.8'
+# Validate datetime
+gem 'validates_timeliness'

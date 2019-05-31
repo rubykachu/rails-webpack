@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
   def index
-    @authors = Author.order_age
+    run Authors::Operation::Index
   end
 end
