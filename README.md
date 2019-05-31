@@ -1,8 +1,9 @@
-## Cấu hình
-**Rails Webpack**
+## Cấu hình rails webpack
 
 https://evilmartians.com/chronicles/evil-front-part-1
+
 https://evilmartians.com/chronicles/evil-front-part-2
+
 https://evilmartians.com/chronicles/evil-front-part-3
 
 **Trailblazer**
@@ -41,6 +42,7 @@ Coffee:: `bundle exec rails webpacker:install:coffee`
 Hoặc `yarn add <plugin>`
 
 ## Cấu trúc thư mục
+
 Controller -> call views -> load components
 
 `controller`: Chỉ để điều hướng và trả kết quả ra views
@@ -54,6 +56,7 @@ Controller -> call views -> load components
 `components`: Chứa các file js, css, images, partial. Path: `frontend/components/`
 
 ## eslintrc
+
 Nếu dùng biến toàn cục thì bổ sung vào file `eslintrc` biến toàn cục đó
 ```
 "env": {
