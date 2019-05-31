@@ -12,22 +12,40 @@ namespace :trailblazer do
     remove_components
   end
 
+  def remove_controller
+    puts "remove #{file_controller}"
+    FileUtils.rm_rf(file_controller)
+  end
+
   def remove_concepts
+    puts "remove #{folder_concepts}"
+    FileUtils.rm_rf(folder_concepts)
   end
 
   def remove_views
+    puts "remove #{folder_views}"
+    FileUtils.rm_rf(folder_views)
   end
 
   def remove_components
-  end
-
-  def remove_controller
-    puts "remove #{file_controller}"
-    FileUtils.rm_rf(file_controller) if File.exist?(file_controller)
+    puts "remove #{folder_components}"
+    FileUtils.rm_rf(folder_components)
   end
 
   def file_controller
     Rails.root.join('app', 'controllers', "#{component}_controller.rb" ).to_path
+  end
+
+  def folder_concepts
+    Rails.root.join('app', 'concepts', component).to_path
+  end
+
+  def folder_views
+    Rails.root.join('app', 'views', component).to_path
+  end
+
+  def folder_components
+    Rails.root.join('app', 'frontend', 'components', component).to_path
   end
 
   def component
