@@ -1,4 +1,5 @@
-class BlazerGenerator < Rails::Generators::Base
+# rails g trailblazer <component>
+class TrailblazerGenerator < Rails::Generators::Base
   argument :component_name, required: true, desc: "rails g blazer module_name"
 
   def create_controller_file
@@ -44,7 +45,7 @@ end
 
   def create_css_file
     create_file "#{component_path}/#{component_name}.css" do
-      "/*#{component_path}/#{component_name}.css*/"
+      "/* #{component_path}/#{component_name}.css */"
     end
   end
 

@@ -1,33 +1,42 @@
 namespace :trailblazer do
-  task rm_component: :environment do
-    # ARGV[0] == 'trailblazer'
-    # ARGV[1] == 'rm'
-    # ARGV[2] == 'component_name'
+  # Remove components
+  # rails trailblazer:rm <component>
+  task rm: :environment do
     ARGV.each { |a| task a.to_sym do ; end }
 
-    # abort('Error Syntax: rails trailblazer:rm_component component_name') unless ARGV[0] == 'trailblazer'
+    # abort('Error Syntax: rails trailblazer:rm_component component_name')
+    @is_remove = false
     remove_controller
     remove_concepts
     remove_views
     remove_components
+    puts "Nothing changes" unless @is_remove
   end
 
   def remove_controller
+    return unless File.exist? file_controller
+    @is_remove = true
     puts "remove #{file_controller}"
     FileUtils.rm_rf(file_controller)
   end
 
   def remove_concepts
+    return unless File.exist? folder_concepts
+    @is_remove = true
     puts "remove #{folder_concepts}"
     FileUtils.rm_rf(folder_concepts)
   end
 
   def remove_views
+    return unless File.exist? folder_views
+    @is_remove = true
     puts "remove #{folder_views}"
     FileUtils.rm_rf(folder_views)
   end
 
   def remove_components
+    return unless File.exist? folder_components
+    @is_remove = true
     puts "remove #{folder_components}"
     FileUtils.rm_rf(folder_components)
   end
@@ -51,12 +60,4 @@ namespace :trailblazer do
   def component
     ARGV.last
   end
-
-  # create  app/controllers/testmeta_controller.rb
-  # create  app/concepts/testmeta/contract/create.rb
-  # create  app/concepts/testmeta/operation/create.rb
-  # create  app/views/testmeta/create.html.slim
-  # create  frontend/components/testmeta/_testmeta.html.slim
-  # create  frontend/components/testmeta/testmeta.css
-  # create  frontend/components/testmeta/testmeta.js
 end
