@@ -1,0 +1,21 @@
+h2.title-page Write a post
+
+= form_with model: post, url: author_posts_path do |f|
+  .form-group.row
+    label.col-sm-2.col-form-label for="subject"  Subject
+    .col-sm-10
+      = f.text_field :subject, class: 'form-control', placeholder: 'Subject'
+
+  .form-group.row
+    label.col-sm-2.col-form-label for="content"  Content
+    .col-sm-10
+      = f.text_area :content, class: 'form-control', placeholder: 'Content'
+
+  .form-group.row
+    label.col-sm-2.col-form-label for="publised-at"  Publised At
+    .col-sm-10
+      = f.text_field :publised_at, class: 'form-control', placeholder: 'yyyy/mm/dd'
+
+  .form-group.row
+    .col-sm-10
+      = f.submit 'Create', class: 'btn btn-primary'

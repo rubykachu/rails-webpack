@@ -3,6 +3,6 @@ tr
   td = link_to author.fullname, '#'
   td = author.email
   td
-    = link_to 'Write', '#'
+    = link_to 'Write', new_author_post_path(author)
     = link_to 'Delete', '#', class: 'pl-2 text-danger'
 

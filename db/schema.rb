@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_034647) do
     t.bigint "author_id", null: false
     t.string "subject", null: false
     t.string "content"
-    t.datetime "publish"
+    t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_posts_on_author_id"
