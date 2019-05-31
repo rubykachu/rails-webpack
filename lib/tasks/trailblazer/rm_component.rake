@@ -45,7 +45,7 @@ namespace :trailblazer do
   end
 
   def folder_components
-    Rails.root.join('app', 'frontend', 'components', component).to_path
+    Rails.root.join('frontend', 'components', component).to_path
   end
 
   def component
