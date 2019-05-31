@@ -1,1 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap";
+
+.title-page {
+  margin: 20px 0;
+  border-bottom: 3px solid var(--info);
+}

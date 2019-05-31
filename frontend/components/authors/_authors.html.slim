@@ -1,0 +1,11 @@
+h2.title-page Authors
+
+table.table.table-striped
+  thead
+    tr
+      th scope="col"  #
+      th scope="col"  Fullname
+      th scope="col"  Email
+      th scope="col"  Handle
+  tbody
+    = render partial: 'components/authors/author', collection: @authors
