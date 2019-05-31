@@ -1,4 +1,3 @@
-# Destroy component trailblazer
 namespace :trailblazer do
   task rm_component: :environment do
     # ARGV[0] == 'trailblazer'
@@ -7,16 +6,24 @@ namespace :trailblazer do
     ARGV.each { |a| task a.to_sym do ; end }
 
     # abort('Error Syntax: rails trailblazer:rm_component component_name') unless ARGV[0] == 'trailblazer'
-    output_confirm
-    execute_remove
+    remove_controller
+    remove_concepts
+    remove_views
+    remove_components
   end
 
-  def execute_remove
-    puts 'ok'
+  def remove_concepts
+  end
+
+  def remove_views
+  end
+
+  def remove_components
   end
 
   def remove_controller
-    File.delete(file_controller) if File.exist?(file_controller)
+    puts "remove #{file_controller}"
+    FileUtils.rm_rf(file_controller) if File.exist?(file_controller)
   end
 
   def file_controller
@@ -25,14 +32,6 @@ namespace :trailblazer do
 
   def component
     ARGV.last
-  end
-
-  def root
-    Rails.root.to_path
-  end
-
-  def output_confirm
-    puts "remove #{file_controller.from(root.size)}" if File.exist?(file_controller)
   end
 
   # create  app/controllers/testmeta_controller.rb
