@@ -1,15 +1,34 @@
 ## Cấu hình rails webpack
 https://evilmartians.com/chronicles/evil-front-part-1
+https://evilmartians.com/chronicles/evil-front-part-2
+https://evilmartians.com/chronicles/evil-front-part-3
 
 ## Chạy ứng dụng
-Chạy lệnh `hivemind` để khởi tạo server. File cấu hình chạy server **Procfile**
+
+**Procfile**: Dùng để chạy các lệnh start Server. Run comand: `hivemind`
+
+`bin/webpack-dev-server`: Start server webpack
+
+`rails s`: Start server rails
+
+`rails g component <component>` dùng để tạo ra components (js, css, html)
 
 ## Cài đặt loader
+
 ERB: `bundle exec rails webpacker:install:erb`
+
 Coffee:: `bundle exec rails webpacker:install:coffee`
 
+Hoặc `yarn add <component>`
+
 ## Cấu trúc thư mục
-Thư mục **views** vẫn là thư mục chính. Các components con của views sẽ chứa trong thư mục **frontend/components/**. Mỗi component sẽ chứa `css`, `js`, `assets`
+Controller -> call views -> load components
+
+`controller`: Viết logic business
+
+`views`: Chỉ có file html theo các action và load các partial từ components
+
+`components`: Chứa các file js, css, images, partial. Path: `frontend/components/`
 
 ## eslintrc
 Nếu dùng biến toàn cục thì bổ sung vào file `eslintrc` biến toàn cục đó
@@ -22,4 +41,5 @@ Nếu dùng biến toàn cục thì bổ sung vào file `eslintrc` biến toàn 
 ```
 
 ## Bug
-- Bị nhấp nháy khi render ra view. Lý do trong quá trinh build thì không build ra file css, mà css được load bởi javascript. Khắc phục: Trong file `webpacker.yml` sửa dòng `extract_css: true` thành `extract_css: false`
+
+1. Bị nhấp nháy khi render ra view. Lý do trong quá trình build thì không build ra file css, mà css được load bởi javascript. Khắc phục: Trong file `webpacker.yml` sửa dòng `extract_css: true` thành `extract_css: false`

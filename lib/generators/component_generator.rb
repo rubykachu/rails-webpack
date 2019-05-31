@@ -1,3 +1,4 @@
+# rails g component <component>
 class ComponentGenerator < Rails::Generators::Base
   argument :component_name, required: true, desc: "Component name, e.g: button"
 
@@ -6,7 +7,9 @@ class ComponentGenerator < Rails::Generators::Base
   end
 
   def create_css_file
-    create_file "#{component_path}/#{component_name}.css"
+    create_file "#{component_path}/#{component_name}.css" do
+      "/* #{component_path}/#{component_name}.css */"
+    end
   end
 
   def create_js_file
