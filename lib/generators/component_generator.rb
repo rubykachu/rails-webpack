@@ -7,7 +7,9 @@ class ComponentGenerator < Rails::Generators::Base
   end
 
   def create_css_file
-    create_file "#{component_path}/#{component_name}.css"
+    create_file "#{component_path}/#{component_name}.css" do
+      "/* #{component_path}/#{component_name}.css */"
+    end
   end
 
   def create_js_file

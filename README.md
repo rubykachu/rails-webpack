@@ -1,10 +1,12 @@
 ## Cấu hình
 **Rails Webpack**
+
 https://evilmartians.com/chronicles/evil-front-part-1
 https://evilmartians.com/chronicles/evil-front-part-2
 https://evilmartians.com/chronicles/evil-front-part-3
 
 **Trailblazer**
+
 https://github.com/trailblazer/trailblazer
 
 Install gems:
@@ -17,25 +19,39 @@ gem 'cells-rails', '0.0.8'
 ```
 
 ## Chạy ứng dụng
-Chạy lệnh `hivemind` để chạy server. File cấu hình chạy server **Procfile**
-Có thể chạy riêng từng cái. Cho rails `rails s`. Cho webpack: `bin/webpack-dev-server`
 
-**Tạo component**: `rails g component ten_component`
-**Tạo thư mục trailblazer**: `rails g blazer ten_module`
+**Procfile**: Dùng để chạy các lệnh start Server. Run comand: `hivemind`
 
-## Cài đặt loader
+`bin/webpack-dev-server`: Start server webpack
+
+`rails s`: Start server rails
+
+`rails g component <component>` dùng để tạo ra components (js, css, html)
+
+`rails g traiblazer <component>` dùng để tạo ra components và các file liên quan đến cấu trúc trailblazer (controller, concepts, contract)
+
+`rails trailblazer:rm <component>` dùng để xoá các components và các file liên quan đến cấu trúc traiblazer (Rollback)
+
+## Cài đặt plugin
+
 ERB: `bundle exec rails webpacker:install:erb`
+
 Coffee:: `bundle exec rails webpacker:install:coffee`
 
-## Cấu trúc thư mục
-** Logic **
-Controller dùng để điều hướng.
-Operation dùng để xử lý logic
-Contract dùng để validate tầng params
-View có thể dùng theo mặc định của Rails hoặc dùng Cell
+Hoặc `yarn add <plugin>`
 
-** UI **
-Thư mục **views** vẫn là thư mục chính. Các components con của views sẽ chứa trong thư mục **frontend/components/**. Mỗi component sẽ chứa `css`, `js`, `assets`
+## Cấu trúc thư mục
+Controller -> call views -> load components
+
+`controller`: Chỉ để điều hướng và trả kết quả ra views
+
+`operation`: Xử lý logic
+
+`contract`: Validate tâng params
+
+`views`: Chỉ có file html theo các action và load các partial từ components. Có thể dùng Cell
+
+`components`: Chứa các file js, css, images, partial. Path: `frontend/components/`
 
 ## eslintrc
 Nếu dùng biến toàn cục thì bổ sung vào file `eslintrc` biến toàn cục đó
@@ -48,4 +64,11 @@ Nếu dùng biến toàn cục thì bổ sung vào file `eslintrc` biến toàn 
 ```
 
 ## Bug
-- Bị nhấp nháy khi render ra view. Lý do trong quá trinh build thì không build ra file css, mà css được load bởi javascript. Khắc phục: Trong file `webpacker.yml` sửa dòng `extract_css: true` thành `extract_css: false`
+
+1. Bị nhấp nháy khi render ra view. Lý do trong quá trình build thì không build ra file css, mà css được load bởi javascript. Khắc phục: Trong file `webpacker.yml` sửa dòng `extract_css: true` thành `extract_css: false`
+
+## Branch
+
+Branch `master`: Vẫn giữ nguyên cấu trúc của Rails và cấu hình Webpack
+
+Branch `config_traiblazer`: Thay đổi cấu trúc từ Rails sang Trailblazer và cấu hình webpack. Được merge từ nhánh `master`
