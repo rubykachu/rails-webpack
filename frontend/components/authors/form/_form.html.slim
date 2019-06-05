@@ -1,7 +1,7 @@
 h1.title-page Add author
 = alert_feedback
 
-= form_with model: @form, url: authors_path, local: true do |f|
+= form_with model: @form, local: true do |f|
   .form-group.row
     label.col-sm-2.col-form-label for="author"  Fullname
     .col-sm-10
@@ -23,5 +23,5 @@ h1.title-page Add author
   .form-group.row
     .col-sm-10
       = cancel_link(authors_path)
-      = f.submit 'Create', class: 'btn btn-primary'
+      = f.submit text_submit(@form), class: 'btn btn-primary'
 

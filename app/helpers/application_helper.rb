@@ -26,11 +26,15 @@ module ApplicationHelper
     when 'notice'
       content_tag :div, flash[:notice], class: 'alert alert-success'
     when 'alert'
-      content_tag :div, flash[:notice], class: 'alert alert-danger'
+      content_tag :div, flash[:alert], class: 'alert alert-danger'
     end
   end
 
   def cancel_link(href, klass: nil)
     link_to 'Cancel', href, class: "btn btn-secondary mr-2 #{klass}"
+  end
+
+  def text_submit(form)
+    form.id.nil? ? 'Create' : 'Update'
   end
 end

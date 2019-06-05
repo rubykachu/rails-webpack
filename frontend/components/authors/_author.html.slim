@@ -1,6 +1,6 @@
 tr
   th scope="row" = author_counter + 1
-  td = link_to author.fullname, '#'
+  td = link_to author.fullname, edit_author_path(author)
   td = author.email
   td
     = link_to 'Write', new_author_post_path(author)
