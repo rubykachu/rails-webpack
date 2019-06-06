@@ -1,3 +1,4 @@
+# Demo Trailblazer và Webpack
 ## Cấu hình rails webpack
 
 https://evilmartians.com/chronicles/evil-front-part-1
