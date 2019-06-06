@@ -12,6 +12,24 @@ class PostsController < ApplicationController
       return redirect_to authors_path, notice: 'Success'
     end
 
+    flash.now[:alert] = 'Failed'
     render :new
+  end
+
+  def show
+    redirect_to edit_author_post_path(params[:author_id], params[:id])
+  end
+
+  def edit
+    run Posts::Operation::Edit
+  end
+
+  def update
+    run Posts::Operation::Update do |result|
+      return redirect_to edit_author_post_path(params[:author_id], params[:id]), notice: 'Success'
+    end
+
+    flash.now[:alert] = 'Failed'
+    render :edit
   end
 end

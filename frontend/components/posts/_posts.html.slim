@@ -7,6 +7,8 @@
       tr
         th scope="col"  #
         th scope="col"  Subject
+        th scope="col"  Tags
+        th scope="col"  Published at
         th scope="col"  Handle
     tbody
       = c 'posts', collection: posts, as: :post, locals: { author: author }

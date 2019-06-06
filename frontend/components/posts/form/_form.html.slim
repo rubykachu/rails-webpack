@@ -1,7 +1,7 @@
 h2.title-page Write a post
 = alert_feedback
 
-= form_with model: @form, url: author_posts_path, local: true do |f|
+= form_with model: [author, @form], local: true do |f|
   .form-group.row
     label.col-sm-2.col-form-label for="author"  Author
     .col-sm-10
@@ -22,10 +22,10 @@ h2.title-page Write a post
   .form-group.row
     label.col-sm-2.col-form-label for="publised-at"  Publised At
     .col-sm-10
-      = f.text_field :published_at, class: 'form-control', placeholder: 'yyyy/mm/dd'
+      = f.text_field :published_at, value: f_datetime(@form.model.published_at) , class: 'form-control', placeholder: 'yyyy/mm/dd'
       = e_form_inline(@form, :published_at)
 
   .form-group.row
     .col-sm-10
       = cancel_link(authors_path)
-      = f.submit 'Create', class: 'btn btn-primary'
+      = f.submit text_submit(@form), class: 'btn btn-primary'

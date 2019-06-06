@@ -37,4 +37,14 @@ module ApplicationHelper
   def text_submit(form)
     form.id.nil? ? 'Create' : 'Update'
   end
+
+  def f_date(date)
+    return if date.blank?
+    date.to_date.strftime('%Y-%m-%d')
+  end
+
+  def f_datetime(datetime)
+    return if datetime.blank?
+    datetime.strftime('%Y-%m-%d %H:%M:%S')
+  end
 end
