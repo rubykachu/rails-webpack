@@ -1,0 +1,3 @@
+- data = c( 'posts', collection: @_result[:posts], locals: { author: @_result[:author] } )
+- escape_js = escape_javascript(data)
+| $(".js--post-lake").html("#{escape_js}");

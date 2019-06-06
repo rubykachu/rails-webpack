@@ -1,5 +1,7 @@
 .container.post-page
-  h2.title-page Posts
+  h2.title-page
+    | Posts |
+    = link_to 'Add new', new_author_post_path(author), class: 'btn btn-link'
   p
     i = "Author: #{author.fullname}"
   table.table.table-striped
@@ -10,6 +12,6 @@
         th scope="col"  Tags
         th scope="col"  Published at
         th scope="col"  Handle
-    tbody
+    tbody.js--post-lake
       = c 'posts', collection: posts, as: :post, locals: { author: author }
   = link_to 'Back', authors_path, class: 'btn btn-secondary'

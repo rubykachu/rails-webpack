@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def create
     run Posts::Operation::Create do |result|
-      return redirect_to authors_path, notice: 'Success'
+      return redirect_to author_posts_path(params[:author_id]), notice: 'Success'
     end
 
     flash.now[:alert] = 'Failed'
@@ -31,5 +31,9 @@ class PostsController < ApplicationController
 
     flash.now[:alert] = 'Failed'
     render :edit
+  end
+
+  def destroy
+    run Posts::Operation::Delete
   end
 end
