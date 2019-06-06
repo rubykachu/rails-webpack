@@ -11,9 +11,9 @@ import "./application.css";
 import "bootstrap/dist/js/bootstrap";
 import Rails from "rails-ujs";
 import Routes from "./route.js.erb";
-
+import "./handler";
 import "components/home/home";
 
 Rails.start();
 window.Routes = Routes;
-console.log("I am here");
+window.$ = jQuery;

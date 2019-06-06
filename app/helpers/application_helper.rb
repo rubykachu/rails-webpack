@@ -24,9 +24,9 @@ module ApplicationHelper
     return if flash.blank?
     case flash.keys.first
     when 'notice'
-      content_tag :div, flash[:notice], class: 'alert alert-success'
+      content_tag :div, flash[:notice], class: 'alert alert-success js--alert-bar'
     when 'alert'
-      content_tag :div, flash[:alert], class: 'alert alert-danger'
+      content_tag :div, flash[:alert], class: 'alert alert-danger js--alert-bar'
     end
   end
 

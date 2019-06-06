@@ -32,4 +32,8 @@ class AuthorsController < ApplicationController
     flash.now[:alert] = 'Failed'
     render :edit
   end
+
+  def destroy
+    run Authors::Operation::Delete
+  end
 end
