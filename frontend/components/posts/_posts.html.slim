@@ -9,5 +9,5 @@
         th scope="col"  Subject
         th scope="col"  Handle
     tbody
-      = c 'posts/lists', collection: posts, as: :post, locals: { author: author }
+      = c 'posts', collection: posts, as: :post, locals: { author: author }
   = link_to 'Back', authors_path, class: 'btn btn-secondary'
