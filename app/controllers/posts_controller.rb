@@ -28,7 +28,6 @@ class PostsController < ApplicationController
     run Posts::Operation::Update do |result|
       return redirect_to edit_author_post_path(params[:author_id], params[:id]), notice: 'Success'
     end
-
     flash.now[:alert] = 'Failed'
     render :edit
   end

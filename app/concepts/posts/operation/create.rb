@@ -1,9 +1,11 @@
 module Posts::Operation
   class Create < Trailblazer::Operation
     include AuthorConcern
+    include FormatParams
 
     step Model( Post, :new )
     step :assign_author!
+    step :processing_params!
     step Contract::Build( constant: Posts::Contract::Create )
     step Contract::Validate( key: :post )
     step Contract::Persist()

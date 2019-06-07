@@ -22,10 +22,18 @@ h2.title-page Write a post
   .form-group.row
     label.col-sm-2.col-form-label for="publised-at"  Publised At
     .col-sm-10
-      = f.text_field :published_at, value: f_datetime(@form.model.published_at) , class: 'form-control', placeholder: 'yyyy/mm/dd'
+      = f.text_field :published_at, value: f_date(@form.model.published_at) , class: 'form-control', placeholder: 'yyyy/mm/dd'
       = e_form_inline(@form, :published_at)
 
   .form-group.row
+    label.col-sm-2.col-form-label for="tags"  Tags
     .col-sm-10
-      = cancel_link(authors_path)
+      - @form.prepopulate!
+      = f.fields_for :tags do |tag|
+        = tag.text_field :name, class: 'form-control mb-3'
+        = e_form_inline(tag.object, :name) || e_form_inline(tag.object, :code)
+
+  .form-group.row
+    .col-sm-10
+      = cancel_link(author_posts_path(author))
       = f.submit text_submit(@form), class: 'btn btn-primary'
