@@ -6,6 +6,19 @@ https://evilmartians.com/chronicles/evil-front-part-2
 
 https://evilmartians.com/chronicles/evil-front-part-3
 
+**Trailblazer**
+
+https://github.com/trailblazer/trailblazer
+
+Install gems:
+```
+gem 'trailblazer', '2.0.7'
+gem 'trailblazer-rails', '1.0.8'
+gem 'trailblazer-cells', '0.0.3'
+gem 'cells-slim', '0.0.5'
+gem 'cells-rails', '0.0.8'
+```
+
 ## Chạy ứng dụng
 
 **Procfile**: Dùng để chạy các lệnh start Server. Run comand: `hivemind`
@@ -15,6 +28,10 @@ https://evilmartians.com/chronicles/evil-front-part-3
 `rails s`: Start server rails
 
 `rails g component <component>` dùng để tạo ra components (js, css, html)
+
+`rails g traiblazer <component>` dùng để tạo ra components và các file liên quan đến cấu trúc trailblazer (controller, concepts, contract)
+
+`rails trailblazer:rm <component>` dùng để xoá các components và các file liên quan đến cấu trúc traiblazer (Rollback)
 
 ## Cài đặt plugin
 
@@ -28,9 +45,13 @@ Hoặc `yarn add <plugin>`
 
 Controller -> call views -> load components
 
-`controller`: Viết logic business
+`controller`: Chỉ để điều hướng và trả kết quả ra views
 
-`views`: Chỉ có file html theo các action và load các partial từ components
+`operation`: Xử lý logic
+
+`contract`: Validate tâng params
+
+`views`: Chỉ có file html theo các action và load các partial từ components. Có thể dùng Cell
 
 `components`: Chứa các file js, css, images, partial. Path: `frontend/components/`
 
