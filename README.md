@@ -1,4 +1,14 @@
 # Demo Trailblazer và Webpack
+Table
+
+Authors: id, fullname, email
+Posts: id, subject, content, published_at, author_id
+Tags: id, post_id, name, code
+
+Run: `rails db:migrate` & `rails s` & `hivemind`
+
+Visit: http://localhost:3000/authors
+
 ## Cấu hình rails webpack
 
 https://evilmartians.com/chronicles/evil-front-part-1
