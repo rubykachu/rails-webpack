@@ -12,7 +12,7 @@ import "bootstrap/dist/js/bootstrap";
 import Rails from "rails-ujs";
 import Routes from "./route.js.erb";
 import "./handler";
-import "components/home/home";
+import "components/authors/authors";
 
 Rails.start();
 window.Routes = Routes;

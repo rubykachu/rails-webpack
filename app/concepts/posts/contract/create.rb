@@ -17,7 +17,7 @@ module Posts::Contract
         if fragment[:_delete] && fragment['id']
           # Trick: The first destroy record and after that delete item in `tags`
           tags.delete(item)
-          item.model.destroy
+          # item.model.destroy
           return skip!
         end
         item ? item : tags.append(Tag.new)
