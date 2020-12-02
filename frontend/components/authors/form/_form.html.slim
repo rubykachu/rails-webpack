@@ -1,0 +1,27 @@
+h1.title-page Add author
+= alert_feedback
+
+= form_with model: @form, local: true do |f|
+  .form-group.row
+    label.col-sm-2.col-form-label for="author"  Fullname
+    .col-sm-10
+      = f.text_field :fullname, class: 'form-control', placeholder: 'Fullname'
+      = e_form_inline(@form, :fullname)
+
+  .form-group.row
+    label.col-sm-2.col-form-label for="email"  Email
+    .col-sm-10
+      = f.text_field :email, class: 'form-control', placeholder: 'Email'
+      = e_form_inline(@form, :email)
+
+  .form-group.row
+    label.col-sm-2.col-form-label for="age"  Age
+    .col-sm-10
+      = f.text_field :age, class: 'form-control', placeholder: 'Age'
+      = e_form_inline(@form, :age)
+
+  .form-group.row
+    .col-sm-10
+      = cancel_link(authors_path)
+      = f.submit text_submit(@form), class: 'btn btn-primary'
+

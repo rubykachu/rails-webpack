@@ -1,0 +1,14 @@
+tr
+  th scope="row" = post_counter + 1
+  td = link_to post.subject, author_post_path(author, post)
+  td
+  td = f_date(post.published_at)
+  td
+    = link_to 'Delete',
+              author_post_path(author, post),
+              class: 'pl-2 text-danger',
+              data: { confirm: 'Are you sure?' },
+              remote: true,
+              method: :delete
+
+

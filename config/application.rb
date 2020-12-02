@@ -27,6 +27,7 @@ module QuizApp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.reform.validations = :active_model
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.generators do |g|

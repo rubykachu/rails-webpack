@@ -51,7 +51,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -59,3 +58,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'js-routes'
 gem 'slim'
 gem 'pry'
+# Install traiblazer
+gem 'trailblazer', '2.0.7'
+gem 'trailblazer-rails', '1.0.8'
+gem 'trailblazer-cells', '0.0.3'
+gem 'cells-slim', '0.0.5'
+gem 'cells-rails', '0.0.8'
+# Validate datetime
+gem 'validates_timeliness'

@@ -10,10 +10,10 @@
 import "./application.css";
 import "bootstrap/dist/js/bootstrap";
 import Rails from "rails-ujs";
-// import Routes from "./route.js.erb";
-
-import "components/home/home";
+import Routes from "./route.js.erb";
+import "./handler";
+import "components/authors/authors";
 
 Rails.start();
 window.Routes = Routes;
-console.log("I am here");
+window.$ = jQuery;
